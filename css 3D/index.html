@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+    <style>
+        .world {
+            width: 60vw;
+            height: 60vh;
+            background: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 500px
+
+        }
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 150px;
+            border-radius: 0.5em;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            background: red;
+            transform: rotateY(45deg);
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="world">
+        <div class="card">card</div>
+        <div class="card">card</div>
+        <div class="card">card</div>
+        <div class="card">card</div>
+        <div class="card">card</div>
+        <div class="card">card</div>
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+</body>
+</html>

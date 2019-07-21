@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object</h1>
+
+    <script>
+        // 생성자 (constructor)
+        function Person(nickname, age){
+            this.nickname = nickname;
+            this.age = age;
+            this.intruduce =  function() {
+                console.log('안녕하세요? 저는 ' + this.nickname +'이고, 나이는'+this.age+'살이애요.');
+            }
+        }
+
+        //인스턴스(instance)
+        const Person1 = new Person('일분이', 10);
+        const Person2 = new Person('이분이', 8);
+
+        Person1.intruduce();
+        Person2.intruduce();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+    <style>
+        @keyframes spaceship-ani {
+            to {
+                background-position: -1800px 0;
+            }
+        }
+        .space {
+            width: 100px;
+            height: 100px;
+            background: url(download.png) no-repeat 0 0 / auto 100px;
+            animation: spaceship-ani .5s infinite steps(18);
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="space"></div>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+    <style>
+        .container {
+            display: flex;
+            /* flex-direction: row; 기본값*/
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: space-between; 양쪽 끝은 붙고, 여백을 균일하게 나누어서 가진다. */
+            /* justify-content: center; */
+            /* justify-content: space-around; 양쪽 끝애도 여백이 생기고, 여백을 하나의 엘리먼트 둘레이 맞에 균일하게 가진다.*/
+            
+            /* align-items: stretch; 기본값*/
+            /* align-items: flex-start; */
+            /* align-items: center; */
+            /* align-items: flex-end; */
+            height: 80vh;
+            background: gray;
+        }
+        .item {
+            /* flex-grow: 1; */
+            /* flex-basis: auto; 기본값*/
+            /* flex-basis: 0; 이것은 기본적으로 원래컨텐츠가 있는 영역도 얼만큼해줄것인지 결정해주는것*/
+            /* flex: 1; */
+            border : 3px solid black;
+            background: #fff;
+        }
+        .item:nth-child(1){flex: 3;}
+        .item:nth-child(2){flex: 7;}
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">AAA</div>
+        <div class="item">B</div>
+        <div class="item">CC</div>
+        <div class="item">DDDD</div>
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+</body>
+</html>

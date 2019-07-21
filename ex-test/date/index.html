@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <link rel='stylesheet' href='./styles.css'>
+    <style>
+      @keyframes rotateIn {
+        from {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: rotate3d(0, 0, 1, -200deg);
+            transform: rotate3d(0, 0, 1, -200deg);
+            opacity: 0;
+        }
+
+        to {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        }
+
+        .rotateIn {
+        animation: rotateIn 0.2s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+        <div id="getting-started"></div>
+        <div class="getting-started">
+            <div class="years"></div>
+            <div class="month"></div>
+            <div class="week"></div>
+            <div class="days"></div>
+            <div class="hours"></div>
+            <div class="minutes"></div>
+            <div class="second"></div>
+
+            <img class="ilbuni" src="./ilbuni_0.png" alt="">
+        </div>
+
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script src='./jquery.countdown.min.js'></script>
+<script type="text/javascript">
+    $(function(){
+
+        // $('.getting-started').countdown('2019/06/12 15:00:00', function(event) {
+        //     $(this).html(event.strftime('남은시간'+'%w weeks %d days %H:%M:%S'));
+        // });
+        $('.getting-started').countdown('2019/06/14 17:00:00', function(event) {
+            var seconds = $('.sconds').html(event.strftime('남은시간'+'%S'));
+            $('.years').text(event.strftime('%Y 년도'));
+            $('.month').text(event.strftime('%m 월'));
+            $('.week').text(event.strftime('%w 일'));
+            $('.days').text(event.strftime('%D days'));
+            $('.hours').text(event.strftime('%H 시간'));
+            $('.minutes').text(event.strftime('%M 분'));
+            $('.second').text(event.strftime('%S 초'));
+
+            
+
+            if (event.offset.seconds) { //if the time is over 10minutes
+                setTimeout(function () {
+                    $('.getting-started').find(".ilbuni").toggleClass('rotateIn');
+                },300);
+            } else { //if the time is between 1 and 10 minutes
+               
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

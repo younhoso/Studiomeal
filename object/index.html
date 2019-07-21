@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <style>
+        .card {
+            display: flex;
+            width: 100px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="A">
+
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+
+<script>
+    $(function(){
+
+        function Card(num, color) {
+            this.num = num;
+            this.color = color;
+        }    
+
+        Card.prototype = {
+            constructor : Card,
+            init : function() {
+                const mainEle = document.createElement('div');
+                mainEle.style.color = this.color;
+                mainEle.innerHTML = this.num;
+                mainEle.classList.add('card');
+                $('.A').append(mainEle);
+            }
+
+        };
+
+
+        const card1 = new Card(1, 'green');
+        card1.init();
+        const card2 = new Card(7, 'blue');
+        card2.init();
+    
+    });
+</script>
+</body>
+</html>

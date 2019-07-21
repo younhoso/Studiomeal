@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+    <style>
+        .special{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tee">
+        tst
+        <p class="b">dsfdfsd</p>
+        <p class="b">dsfdfsd</p>
+        <p class="b">dsfdfsd</p>
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+    // window.addEventListener('load', function(){
+    // window.addEventListener('DOMContentLoaded', function(){      
+       
+    // });
+
+    (function() {
+        const li = document.querySelector('.b:nth-child(3)');
+
+        const clickHandler = function(){
+            li.classList.toggle('special')
+        };
+
+        li.addEventListener('click', clickHandler)
+    })();
+
+</script>
+</body>
+</html>

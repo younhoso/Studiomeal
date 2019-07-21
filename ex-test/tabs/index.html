@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel='stylesheet' href='./styles.css'>
+</head>
+<body>
+    <div class="stage">
+
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+
+        <div class="arrow">
+            <a href="#0" class="left">Left</a>
+            <a href="#0" class="right">Right</a>
+        </div>
+    </div>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+    $(function(){
+        const stageEle = $('.stage');
+        const limit = $('.door').length - 1;
+        let currentItem;
+        let current = 0;
+
+        // 활성화
+        const navigate = function(ele){
+            ele.addClass('door-open');
+            currentItem = ele;
+        };
+
+        // 비활성화
+        const innavigate = function(ele){
+            ele.removeClass('door-open');
+        };
+
+        const Handler = function(e) {
+            if(currentItem){
+                innavigate(currentItem);
+            }
+            if($(this).hasClass('door')){
+                navigate($(this));
+            }            
+        }
+
+
+
+        $('.left').on('click',function(){
+            current = current - 1;
+            if(current < 0) current = limit;
+
+            if(currentItem){
+                innavigate(currentItem);
+            }
+
+            if($('.door').hasClass('door')){
+                navigate($('.door').eq(current))
+            }
+            
+        })
+
+        $('.right').on('click',function(){
+            current = current + 1;
+            if(current > limit) current = 0;
+
+            if(currentItem){
+                innavigate(currentItem);
+            }
+            
+            if($('.door').hasClass('door')){
+                navigate($('.door').eq(current))
+            }
+            
+        })
+
+        
+        stageEle.on('click','.door', Handler);
+        navigate($('.door').eq(0));
+    });
+</script>
+</body>
+</html>

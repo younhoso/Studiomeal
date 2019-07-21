@@ -1,0 +1,79 @@
+.stage {
+    width:100vw;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.door {
+    width: 100px;
+    height: 150px;
+    position: relative;
+}
+
+.door .door-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    overflow: hidden;
+}   
+.door .ilbuni {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: contain;
+    transform: translate3d(100%, 0, 0);
+    transition: 0.5s;
+}
+
+.door:nth-child(1) .ilbuni {
+    background-image: url(img/ilbuni_0.png);
+}
+
+.door:nth-child(2) .ilbuni {
+    background-image: url(img/ilbuni_2.png);
+}
+
+.door:nth-child(3) .ilbuni {
+    background-image: url(img/ilbuni_3.png);
+}
+
+.door-body {
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.25s;
+    transform-origin: left;
+}
+
+.door:nth-child(1) .door-body {background: rgba(255, 0, 0, 0.493)}
+.door:nth-child(2) .door-body {background: rgba(51, 255, 0, 0.493)}
+.door:nth-child(3) .door-body {background: rgba(0, 4, 255, 0.493)}
+
+.door-open .door-body{
+    transform: perspective(900px) rotateY(-110deg);
+}
+.door-open .ilbuni {
+    transform: translate3d(0,0,0);
+}
+
+/* .door:hover .door-body{
+    transform: perspective(900px) rotateY(-110deg);
+}
+.door:hover .ilbuni {
+    transform: translate3d(0,0,0);
+} */
+
+.arrow .left {color: #fff;}
+.arrow .right {color: #fff;}

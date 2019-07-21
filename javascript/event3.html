@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <style>
+        .stage{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="A">
+    <div class="stage">
+        <p class="ilbuni">dsfdfsd</p>
+        <p class="ilbuni">dsfdfsd</p>
+        <p class="ilbuni">dsfdfsd</p>
+    </div>
+</div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+    (function() {
+        // 이벤트 위임
+        const stage = document.querySelector('.stage');
+        console.log(stage)
+ 
+        const clickHandler = function(e){
+            if(e.target.classList.contains('ilbuni') == true){
+                stage.removeChild(e.target)
+            }
+        }
+        stage.addEventListener('click', clickHandler)
+    })();
+
+</script>
+</body>
+</html>

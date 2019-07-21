@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+</head>
+<body>
+   <button class="btn">취소</button>
+    
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+   //  $(function(){
+    //    const ilbuni = $('.ilbuni');
+    //    const stage = $('.stage');
+
+    //    const clickHandler = function(e) {
+    //        console.log(e.target);
+    //       $(e.target).remove();
+    //   };
+
+    //    $('.stage').on('click','.ilbuni', clickHandler)
+     //   $('.stage').on('click','.ilbuni_1', clickHandler)
+    //});
+
+$(function(){
+    let timeId;
+    let n = 0;
+
+function sample() {
+    n++; //1씩 증가 시킨다.
+    console.log(n);
+        if(n > 200){ //이렇게 조건을 사용해서 반복하는 범위도 설정을 해줄수 있다.
+        return;
+    }
+    console.log('sample!');
+        //requestAnimationFramesms 기본적으로 한번만 실행을 하는데. 함수안에서 sample함수를 또 호출하고 있다.(재귀함수) 그래서 계속 반복이 된다. 60분에 1초 목표로
+        timeId = requestAnimationFrame(sample); // requestAnimationFrame(sample) 이 리턴해주고 있는 숫자값을 변수에 저장한다.
+        console.log(timeId);
+    }
+    sample()
+
+    $('.btn').on('click', function(){
+        cancelAnimationFrame(timeId);    //requestAnimationFrame에서 반환해주고 있는 숫자를 timeId 이곳에 저장 한 값을 이용해서 cancelAnimationFrame 취소시킬수 있다.
+    });
+});
+</script>
+</body>
+</html>

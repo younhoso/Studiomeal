@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+</head>
+<body>
+    <div class="output">output</div>
+    <div class="content">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In consequuntur ut deserunt non accusamus dignissimos doloremque eius nisi. Excepturi debitis neque culpa cum laborum recusandae accusamus obcaecati eum saepe architecto.
+        </p>
+        <figure class="ilbuni">
+            <img src="imgages/ilbuni_0.png" alt="일분이">
+        </figure>
+
+        <figure class="ilbuni">
+            <img src="imgages/ilbuni_0.png" alt="일분이">
+        </figure>
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+
+<script>
+    // (function(){
+    //     const outputEle = document.querySelector('.output');
+    //     const ilbuniEle = document.querySelectorAll('.ilbuni')
+
+    //     const showValue = function(){
+    //         // outputEle.innerHTML = window.pageYOffset;   //pageYOffset 전역객체 속성 현재 스크롤 위치값을 알려준다. 
+    //         // outputEle.innerHTML = ilbuniEle.offsetTop;   //offsetTop 전역객체 속성 특정 엘리먼트 위치를 알려준다.(실시간 갱신은 안된다.)
+    //         // outputEle.innerHTML = ilbuniEle.getBoundingClientRect().top; //getBoundingClientRect 엘리먼트 위치와, 크기 값을 가지고 있다.
+    //         // console.log(ilbuniEle.getBoundingClientRect());
+    //         for(let i = 0; i < ilbuniEle.length; i++ ){
+    //             let pos = ilbuniEle[i].getBoundingClientRect();
+    //             t = pos.top;
+    //             outputEle.innerHTML = t
+           
+    //             console.log(window.innerHeight * 0.2);
+    //             if(t < window.innerHeight * 0.2){
+    //                 ilbuniEle[i].classList.add('zoom');
+    //             } else {
+    //                 ilbuniEle[i].classList.remove('zoom');
+    //             }
+    //         }
+    //     };
+
+    //     window.addEventListener('scroll', function(){
+    //         showValue();
+    //     });
+
+    // })();
+</script>
+
+<script>
+    $(function(){
+        const $outputEle = $('.output');
+        const $ilbuniEle = $('.ilbuni');
+
+        const showValue = function() {
+            //outputEle.text(pageYOffset);     //pageYOffset 전역객체 속성 현재 스크롤 위치값을 알려준다. 
+            console.log($ilbuniEle.get(1));
+            let posY = $ilbuniEle.get(1).getBoundingClientRect().top;    // .get()은 선택한 요소를 배열(Array)로 가져옵니다.
+            $outputEle.html(posY);
+
+            if(posY < window.innerHeight * 0.2){    // 브라우저 현제 높이값 불러온다.(window.innerHeight * 0.2) 그걸 1/5만큼 계산해서, 일분이 위치값 보다 크면 true;;
+                $ilbuniEle.addClass('zoom');
+            } else {
+                $ilbuniEle.removeClass('zoom');
+            }
+        };
+
+        $(window).on('scroll',function(){
+            showValue();
+        });
+    });
+
+</script>
+
+</body>
+</html>

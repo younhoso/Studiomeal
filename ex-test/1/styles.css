@@ -1,0 +1,46 @@
+.stage {
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.door {
+    width: 100px;
+    height: 150px;
+    position: relative;
+}
+
+.door .door-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.door .ilbuni {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: contain;
+    outline:  2px dashed red;
+}
+
+.door .door-body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.door:nth-child(1) .door-body {background: rgba(255, 0, 0, 0.5);}
+.door:nth-child(2) .door-body {background: rgba(13, 255, 0, 0.5);}
+.door:nth-child(3) .door-body {background: rgba(0, 8, 255, 0.5);}

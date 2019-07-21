@@ -1,0 +1,86 @@
+
+body {
+    height: 500vw;
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
+    background: #fff000;
+    /* transition: background .5s; */
+}
+
+.world {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    /* 3차원 공간으로 만들어준다. */
+    perspective: 1000px; 
+}
+
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    /* 3d효과가 자식태그에게도 전달이 되게 해줄려면 transform-style: preserve-3d; 써줘야 한다.*/
+    transform-style: preserve-3d;
+}
+
+.house {
+    width: 100vw;
+    height: 100vh;
+     /* 3d효과가 자식태그에게도 전달이 되게 해줄려면 transform-style: preserve-3d; 써줘야 한다.*/
+    transform-style: preserve-3d;
+    transform: translateZ(-490vw);
+    -webkit-transform: translateZ(-490vw);
+    -moz-transform: translateZ(-490vw);
+    -ms-transform: translateZ(-490vw);
+    -o-transform: translateZ(-490vw);
+}
+
+.wall {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.wall-left {
+    width: 1000vw;
+    /* left: -500vw; */
+    background: #f8f8f8;
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg) translateZ(-400vw);
+    -moz-transform: rotateY(90deg) translateZ(-400vw);
+    -ms-transform: rotateY(90deg) translateZ(-400vw);
+    -o-transform: rotateY(90deg) translateZ(-400vw);
+}
+.wall-right {
+    width: 1000vw;
+    /* left: -500vw; */
+    background: #f8f8f8;
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg) translateZ(-500vw);
+    -moz-transform: rotateY(90deg) translateZ(-500vw);
+    -ms-transform: rotateY(90deg) translateZ(-500vw);
+    -o-transform: rotateY(90deg) translateZ(-500vw);
+}
+
+.wall-front-a { transform:translateZ(300vw) ; -webkit-transform:translateZ(300vw) ; -moz-transform:translateZ(300vw) ; -ms-transform:translateZ(300vw) ; -o-transform:translateZ(300vw) ; }
+.wall-front-b { transform:translateZ(50vw) ; -webkit-transform:translateZ(50vw) ; -moz-transform:translateZ(50vw) ; -ms-transform:translateZ(50vw) ; -o-transform:translateZ(50vw) ; }
+.wall-front-c { transform:translateZ(-200vw) ; -webkit-transform:translateZ(-200vw) ; -moz-transform:translateZ(-200vw) ; -ms-transform:translateZ(-200vw) ; -o-transform:translateZ(-200vw) ; }
+.wall-front-d { transform:translateZ(-500vw) ; -webkit-transform:translateZ(-500vw) ; -moz-transform:translateZ(-500vw) ; -ms-transform:translateZ(-500vw) ; -o-transform:translateZ(-500vw) ; }
+
+.wall-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wall-title {
+    font-size: 5rem;
+}

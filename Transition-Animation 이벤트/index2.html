@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+        <style>
+        @keyframes ball-ani {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(200px, 200px);
+            }
+        }
+
+            .ball {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: red;
+                transition: .3s;
+                margin: -15px 0 0 -15px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                /*animation: ball-ani 1s 3 alternate forwards;*/
+            }
+
+            .ball.end {
+                background: dodgerblue;
+            }
+        </style>
+</head>
+<body>
+<div class="ball"></div>
+
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+    $(function(){
+        const ballEle = $('.ball');    
+
+         ballEle.on('click', function(){
+            ballEle.css('animation','ball-ani 1s 3 alternate forwards');
+        });
+        
+        ballEle.on('animationend', function(){
+            ballEle.addClass('end');
+        });
+        
+        // 애니메이션 반복하는 시점에 이벤트도 잡아낼수 있다.
+        ballEle.on('animationiteration', function(){
+            console.log('반복!');
+        });
+
+    });
+
+    animationstart
+    animationend
+    animationiteration
+
+</script>
+</body>
+</html>

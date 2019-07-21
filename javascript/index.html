@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+</head>
+<body>
+
+    <div class="tee">
+        tst
+        <p class="b">dsfdfsd</p>
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+    const sectionele = document.createElement('section');
+    sectionele.innerHTML = '<a href="#0">안녕하세요</a>'
+    sectionele.setAttribute('class','test');
+    const v = sectionele.classList.contains('test');
+    console.log(v);
+
+    const teeele = document.querySelector('.tee');
+    teeele.classList.add('special','someclass2');
+    teeele.appendChild(sectionele)
+
+
+    teeele.removeChild( document.querySelector('.b'))
+
+
+</script>
+</body>
+</html>

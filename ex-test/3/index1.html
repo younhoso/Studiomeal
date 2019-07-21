@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'>
+    <link rel='stylesheet' href='./styles.css'>
+</head>
+<body>
+    <div class="stage">
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="ilbuni"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+    </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js'></script>
+<script>
+    (function(){
+        const stageElem = document.querySelector('.stage');
+        // 현재 활성화된 아이템을 저장
+        let currentItem;
+       
+        const doorHandler = function(e){
+            const targetElem = e.target;
+
+            if(currentItem){    //위에서 (현재 활성화된 아이템)을 공유 받아와서 true가 되고 remove 실행한다.
+                currentItem.classList.remove('door-opened');
+            }
+
+            if(targetElem.classList.contains('door-body')) {
+                targetElem.parentNode.classList.add('door-opened');
+                currentItem = targetElem.parentNode;
+            }
+        };
+
+        stageElem.addEventListener('click', doorHandler);
+    })();
+</script>
+</body>
+</html>
