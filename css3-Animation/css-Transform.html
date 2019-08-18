@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css-Transform</title>
+    <style>
+        .box-container {
+            display: flex;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            background: rgba(255, 255, 0, 0.7);
+        }
+        .box:hover {
+            /** Transform: scale(2.0) rotate(15deg); */
+            /** Transform: skewY(30deg); */
+
+            /** 
+            Transform: translateX(30px);
+            Transform: translateY(30px);  
+            Transform: translate(30px, 10px); /** 축약형 */
+            */
+
+            Transform: scale(1.2) rotate(30deg);
+            /** Transform-origin: left top; */
+            Transform-origin: 50% 100%;    /** 30% 퍼센트로 애매한 값도 가능하다. */
+
+        }
+    </style>
+</head>
+<body>
+    <h1>css3-Transform</h1>
+    <!-- 
+        el변형 전용으로 나온것 Transform  
+        장점 :
+        하드웨어 가속(GPU)을 이용해서 성능이 좋다. 예) 모바일기기에서 position으로 top, left 해서 이동하는것과,  
+        Transform:translate(10px, 10px)으로 이동하는것은 확연하게 다르다.(네이이브앱 수준과 비슷하다.)
+    -->
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, totam eum? Cum accusantium iusto accusamus ab eos saepe aut soluta omnis nostrum facilis. Illo maiores similique nesciunt corrupti quidem laborum.</p>
+    <div class="box-container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque laborum possimus minima maiores distinctio hic fugiat repellat tenetur! Et quo magnam dolorum dolor aliquid tenetur fugiat amet, mollitia asperiores voluptate!</p>
+
+</body>
+</html>
